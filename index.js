@@ -135,18 +135,22 @@ class BarcodeMask extends React.Component {
       topRight: {
         borderRightWidth: this.props.edgeBorderWidth,
         borderTopWidth: this.props.edgeBorderWidth,
+        borderTopRightRadius: 8,
       },
       topLeft: {
         borderLeftWidth: this.props.edgeBorderWidth,
         borderTopWidth: this.props.edgeBorderWidth,
+        borderTopLeftRadius: 8
       },
       bottomRight: {
         borderRightWidth: this.props.edgeBorderWidth,
         borderBottomWidth: this.props.edgeBorderWidth,
+        borderBottomRightRadius: 8
       },
       bottomLeft: {
         borderLeftWidth: this.props.edgeBorderWidth,
         borderBottomWidth: this.props.edgeBorderWidth,
+        borderBottomLeftRadius: 8
       },
     };
     return <View style={[defaultStyle, styles[edgePosition + 'Edge'], edgeBorderStyle[edgePosition]]} />;
@@ -159,8 +163,11 @@ class BarcodeMask extends React.Component {
           style={[
             styles.finder,
             {
-              width: this.props.width,
-              height: this.props.height,
+              width: this.props.width + 20,
+              height: this.props.height + 20,
+              borderRadius: 8,
+              // position: 'absolute',
+              zIndex: 10,
             },
           ]}
         >
